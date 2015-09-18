@@ -5,7 +5,7 @@ export LANGUAGE=en_US.UTF-8
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 ZSH_THEME="norm"
-plugins=(git)
+plugins=(git sublime vagrant)
 
 # aliases
 alias docker='~/Tools/docker'
