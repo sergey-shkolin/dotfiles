@@ -23,6 +23,7 @@ alias gs="git status -sb"
 alias fastping='ping -c 100 -s 2'
 alias header='curl -I'
 alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
+alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
