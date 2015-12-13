@@ -8,22 +8,25 @@ ZSH_THEME="norm"
 plugins=(git sublime vagrant)
 
 # aliases
+alias reload!='. ~/.zshrc'
+
 alias docker='~/Tools/docker'
 alias etcdctl='~/Tools/etcdctl'
-
 alias vgs="vagrant global-status"
 alias vs="vagrant status"
 alias vu="vagrant up"
+alias fastping='ping -c 100 -s 2'
+alias header='curl -I'
+alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
+alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 
 # git aliases
 alias gpr='git pull --rebase'
 alias gpu='git pull --rebase && git push'
 alias gs="git status -sb"
-
-alias fastping='ping -c 100 -s 2'
-alias header='curl -I'
-alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
-alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias gd='git diff'
+alias gb='git branch'
+alias clean-local-branches='git branch --merged | grep -v "master" | xargs git branch -d'
 
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
@@ -37,4 +40,3 @@ source $ZSH/oh-my-zsh.sh
 # private sources
 source ~/Dropbox/configs/.aliases.private
 source ~/Dropbox/configs/.auth
-
