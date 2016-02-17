@@ -1,0 +1,51 @@
+[user]
+	name = Sergey Shkolin 
+	email = sergey.shkolin@me.com
+
+[push]
+	default = simple
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
+[alias]
+	st = status -sb
+	co = checkout
+	cl = clone
+	di = diff
+	l  = log -u --name-status --stat --summary --color
+	lo = log --format=oneline
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lp = log -p
+	head = log -1 HEAD
+	up = pull --rebase
+        review = log -p --max-count=1
+	wdiff = diff --color-words
+
+[core]
+	excludesfile = /Users/sergey/.gitignore_global
+
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+
+[color "status"]
+    added = yellow
+    changed = green bold
+    untracked = blue bold
+
+[color "diff"]
+    meta = blue bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[github]
+    user = sergey-shkolin
+
+[gist]
+    private = true
+
