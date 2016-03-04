@@ -28,6 +28,9 @@ alias gd='git diff'
 alias gb='git branch'
 alias clean-local-branches='git branch --merged | grep -v "master" | xargs git branch -d'
 
+# misc
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
 function add-ssh-key() { cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> ~/.ssh/authorized_keys' }
