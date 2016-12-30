@@ -1,6 +1,7 @@
 [user]
 	name = Sergey Shkolin 
 	email = sergey.shkolin@me.com
+	signingkey = 155E4687AB4904F0
 
 [push]
 	default = simple
