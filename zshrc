@@ -9,7 +9,7 @@ plugins=(git sublime vagrant)
 
 # aliases
 alias reload!='. ~/.zshrc'
-
+alias h='history'
 alias docker='~/Tools/docker'
 alias etcdctl='~/Tools/etcdctl'
 alias vgs="vagrant global-status"
@@ -34,8 +34,11 @@ alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
 function add-ssh-key() { cat ~/.ssh/id_rsa.pub | ssh $1 'cat >> ~/.ssh/authorized_keys' }
-function generate_mac() { openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' }
+function generate-mac() { openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//' }
 function doc() { open dash://$1:$2 }
+function cg() { grep  -v ^# $1 | grep -v ^$ }
+function fnd() { find . -name "*$**" }
+function grp() { grep -Ir "$(echo $*)" . }
 
 # sources
 source $ZSH/oh-my-zsh.sh
@@ -43,3 +46,4 @@ source $ZSH/oh-my-zsh.sh
 # private sources
 source ~/Dropbox/configs/.aliases.private
 source ~/Dropbox/configs/.auth
+
