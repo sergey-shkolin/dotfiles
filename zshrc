@@ -2,7 +2,8 @@
 export ZSH=/Users/sergey/.oh-my-zsh
 export LC_ALL=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/sergey/Bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export VAGRANT_DEFAULT_PROVIDER=parallels
 
 ZSH_THEME="norm"
 plugins=(git sublime vagrant)
@@ -10,8 +11,6 @@ plugins=(git sublime vagrant)
 # aliases
 alias reload!='. ~/.zshrc'
 alias h='history'
-alias docker='~/Tools/docker'
-alias etcdctl='~/Tools/etcdctl'
 alias vgs="vagrant global-status"
 alias vs="vagrant status"
 alias vu="vagrant up"
@@ -19,6 +18,8 @@ alias fastping='ping -c 100 -s 2'
 alias header='curl -I'
 alias lock='open -a /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources/ScreenSaverEngine.app'
 alias flushdns='dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
+alias salt-ssh='salt-ssh -c ${PWD}/etc/salt'
 
 # git aliases
 alias gpr='git pull --rebase'
@@ -27,9 +28,6 @@ alias gs="git status -sb"
 alias gd='git diff'
 alias gb='git branch'
 alias clean-local-branches='git branch --merged | grep -v "master" | xargs git branch -d'
-
-# misc
-alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'
 
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
@@ -44,6 +42,6 @@ function grp() { grep -Ir "$(echo $*)" . }
 source $ZSH/oh-my-zsh.sh
 
 # private sources
-source ~/Dropbox/configs/.aliases.private
-source ~/Dropbox/configs/.auth
+source ~/iCloud/Configs/aliases.txt
+source ~/iCloud/Configs/aws-hints.txt
 
