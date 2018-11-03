@@ -28,6 +28,8 @@ alias gs="git status -sb"
 alias gd='git diff'
 alias gb='git branch'
 alias clean-local-branches='git branch --merged | grep -v "master" | xargs git branch -d'
+alias cmg='git commit -a -m "$(curl -s https://whatthecommit.com/index.txt)"'
+alias yolo='git commit -a -m "$(curl -s https://whatthecommit.com/index.txt)"; git push -f'
 
 # functions
 function genpwd() { head /dev/urandom | uuencode -m - | sed -n 2p | cut -c1-${1:-12}; }
@@ -45,3 +47,6 @@ source $ZSH/oh-my-zsh.sh
 source ~/iCloud/Configs/aliases.txt
 source ~/iCloud/Configs/aws-hints.txt
 
+
+# added by travis gem
+[ -f /Users/sergey/.travis/travis.sh ] && source /Users/sergey/.travis/travis.sh
