@@ -5,8 +5,8 @@ export LANGUAGE=en_US.UTF-8
 export PATH="/Users/sergey/Bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export VAGRANT_DEFAULT_PROVIDER=parallels
 
-ZSH_THEME="norm"
-plugins=(git sublime vagrant)
+ZSH_THEME="robbyrussell"
+plugins=(git vagrant aws docker encode64 terraform kubectl)
 
 # aliases
 alias reload!='. ~/.zshrc'
